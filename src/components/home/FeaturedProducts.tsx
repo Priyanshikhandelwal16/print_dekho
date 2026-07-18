@@ -35,7 +35,7 @@ export function FeaturedProducts() {
           description="Our most requested corporate gifting products, loved by brands across India"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mt-12">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
@@ -44,7 +44,7 @@ export function FeaturedProducts() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-30px" }}
-              className="w-full max-w-[400px] mx-auto"
+              className="w-full max-w-[400px] sm:max-w-none mx-auto"
             >
               <Link href="/products" className="group block">
                 <div className="relative h-[280px] sm:h-[320px] md:h-[380px] lg:h-[480px] rounded-[24px] overflow-hidden bg-cream border border-border/40 hover:border-accent/30 shadow-sm hover:shadow-xl transition-all duration-500">

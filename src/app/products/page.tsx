@@ -123,7 +123,7 @@ export default function ProductsPage() {
             description="Find the perfect corporate gifting solution for every occasion."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((cat, i) => (
               <motion.div
                 key={cat.slug}
@@ -131,7 +131,7 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className={cat.span}
+                className={`w-full max-w-[400px] sm:max-w-none mx-auto ${cat.span}`}
               >
                 <Link
                   href={`/products/${cat.slug}`}

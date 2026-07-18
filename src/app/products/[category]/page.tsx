@@ -214,7 +214,7 @@ export default function CategoryPage() {
       {/* Product Gallery — white */}
       <section className="section-spacing bg-white">
         <div className="container-main">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6">
             {category.products.map((product, i) => {
               const name = product.name;
               const img = product.image;
@@ -226,7 +226,7 @@ export default function CategoryPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative h-[360px] lg:h-[420px] rounded-[24px] overflow-hidden border border-border/40 hover:border-accent/30 hover:shadow-2xl transition-all duration-500 bg-stone"
+                  className="group relative w-full max-w-[400px] sm:max-w-none mx-auto h-[280px] sm:h-[360px] lg:h-[420px] rounded-[24px] overflow-hidden border border-border/40 hover:border-accent/30 hover:shadow-2xl transition-all duration-500 bg-stone"
                 >
                   <Image
                     src={img}
