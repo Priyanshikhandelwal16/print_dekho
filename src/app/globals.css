@@ -52,15 +52,15 @@ body {
   color: var(--color-secondary);
   background-color: var(--color-ivory);
   overflow-x: hidden;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='3' fill='%23F97316' opacity='0.6'/%3E%3C/svg%3E") 4 4, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='3' fill='%23137A73' opacity='0.7'/%3E%3C/svg%3E") 4 4, auto;
 }
 
 a, button, [role="button"] {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='8' fill='none' stroke='%23F97316' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%23F97316'/%3E%3C/svg%3E") 10 10, pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='8' fill='none' stroke='%23137A73' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%23137A73'/%3E%3C/svg%3E") 10 10, pointer;
 }
 
 ::selection {
-  background-color: #F97316;
+  background-color: #137A73;
   color: white;
 }
 
