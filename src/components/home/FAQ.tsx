@@ -5,35 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-
-const faqs = [
-  {
-    question: "What is the minimum order quantity (MOQ)?",
-    answer: "Our MOQ varies by product — typically 50 pieces for printed items and 25 for premium gifts. We're flexible and can accommodate smaller quantities for select products. Contact us for specific requirements.",
-  },
-  {
-    question: "What is the typical delivery timeline?",
-    answer: "Standard orders are delivered within 7-12 business days from design approval. Express delivery (3-5 days) is available for urgent requirements at an additional cost. Pan India delivery is included.",
-  },
-  {
-    question: "What branding options are available?",
-    answer: "We offer logo printing (screen, digital, UV), embroidery, sublimation, laser engraving, debossing, and heat transfer. Our team recommends the best method based on your product and design requirements.",
-  },
-  {
-    question: "Do you provide design mockups before production?",
-    answer: "Yes! We provide free digital mockups within 24-48 hours of receiving your brand guidelines. You can request unlimited revisions before approving the final design for production.",
-  },
-  {
-    question: "Do we get a dedicated account manager?",
-    answer: "Absolutely. Every client is assigned a dedicated account manager who handles your requirements end-to-end — from product selection to delivery tracking. Available via phone, email, and WhatsApp.",
-  },
-  {
-    question: "Can I request product samples before bulk ordering?",
-    answer: "Yes, we provide branded samples for quality approval before bulk production. Sample costs are adjusted against the final order. Unbranded samples are available at nominal charges.",
-  },
-];
+import { useSiteData } from "@/lib/useSiteData";
 
 export function FAQ() {
+  const { data } = useSiteData();
+  
+  // Flatten all category faqs into an array for home section
+  const allFaqs = Object.values(data?.faqs || {}).flat() as { question: string; answer: string }[];
+  const displayFaqs = allFaqs.length > 0 ? allFaqs.slice(0, 6) : [];
+
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -61,9 +41,9 @@ export function FAQ() {
 
           {/* Right - Accordion */}
           <div className="lg:col-span-3 space-y-3">
-            {faqs.map((faq, i) => (
+            {displayFaqs.map((faq, i) => (
               <motion.div
-                key={i}
+                key={faq.question || i}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

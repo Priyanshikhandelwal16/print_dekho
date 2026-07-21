@@ -66,15 +66,19 @@ const blogs = [
   },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export default function BlogPage() {
+  const { data } = useSiteData();
+  const blogs = data?.blogs || [];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredBlogs = activeCategory === "All"
     ? blogs
-    : blogs.filter(b => b.category === activeCategory);
+    : blogs.filter((b: any) => b.category === activeCategory);
 
-  const featured = filteredBlogs.find(b => b.featured) || filteredBlogs[0];
-  const gridBlogs = filteredBlogs.filter(b => b !== featured);
+  const featured = filteredBlogs.find((b: any) => b.featured) || filteredBlogs[0];
+  const gridBlogs = filteredBlogs.filter((b: any) => b !== featured);
 
   return (
     <>
@@ -156,7 +160,7 @@ export default function BlogPage() {
 
           {/* Blog Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gridBlogs.map((blog, i) => (
+            {gridBlogs.map((blog: any, i: number) => (
               <motion.div
                 key={blog.title}
                 initial={{ opacity: 0, y: 16 }}

@@ -60,7 +60,26 @@ const kitItems = [
   { name: "Polo Tees", image: "/images/slider_apparel.png" },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
+const iconMap: Record<string, any> = {
+  "Employee Welcome Kit": Users,
+  "Joining Kit": Briefcase,
+  "Executive Kit": Award,
+  "Dealer Kit": Gift,
+  "Festival Kit": PartyPopper,
+  "Work-From-Home Kit": Laptop,
+};
+
 export default function CorporateKitsPage() {
+  const { data } = useSiteData();
+  const kits = data?.corporateKits || [];
+
+  const kitTypes = kits.map((kit: any) => ({
+    ...kit,
+    icon: iconMap[kit.title] || Gift,
+  }));
+
   return (
     <>
       {/* Hero — cream */}
@@ -120,7 +139,7 @@ export default function CorporateKitsPage() {
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {kitTypes.map((kit, i) => (
+            {kitTypes.map((kit: any, i: number) => (
               <motion.div
                 key={kit.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -146,7 +165,7 @@ export default function CorporateKitsPage() {
                     <h3 className="font-heading font-bold text-base text-secondary">{kit.title}</h3>
                   </div>
                   <ul className="space-y-1.5 mb-4">
-                    {kit.items.map((item) => (
+                    {(kit.items || []).map((item: any) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-muted">
                         <span className="w-1 h-1 bg-accent rounded-full flex-shrink-0" />
                         {item}

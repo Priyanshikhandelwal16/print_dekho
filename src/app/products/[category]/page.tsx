@@ -167,7 +167,10 @@ const brandingOptions = [
   { icon: Flame, title: "Heat Transfer", description: "Full-color detailed prints on fabric with DTF & vinyl press." },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export default function CategoryPage() {
+  const { data } = useSiteData();
   const params = useParams();
   const rawSlug = params.category as string;
   
@@ -177,7 +180,7 @@ export default function CategoryPage() {
   if (rawSlug === "accessories") slug = "stationery";
   if (rawSlug === "hampers") slug = "festival-hampers";
   
-  const category = categoryData[slug] || {
+  const baseCategory = categoryData[slug] || {
     name: slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
     description: "Explore our range of customizable corporate gifting products.",
     products: [
@@ -186,6 +189,27 @@ export default function CategoryPage() {
       { name: "Executive Notebook Set", image: "/images/cp1.jpeg" },
       { name: "Branded Desk Organizer", image: "/images/cp2.jpeg" }
     ]
+  };
+
+  // Merge dynamic products uploaded via Admin Panel for this category
+  const dynamicProducts = (data?.products || []).filter((p: any) => {
+    if (!p) return false;
+    const catSlugMatch = p.categorySlug === slug || p.categorySlug === rawSlug;
+    const catNameMatch = p.category && baseCategory.name && p.category.toLowerCase().includes(baseCategory.name.toLowerCase());
+    return catSlugMatch || catNameMatch;
+  });
+
+  const dynamicProductNames = new Set(dynamicProducts.map((p: any) => p.name.toLowerCase().trim()));
+  const filteredBaseProducts = baseCategory.products.filter(
+    (bp) => !dynamicProductNames.has(bp.name.toLowerCase().trim())
+  );
+
+  const category = {
+    ...baseCategory,
+    products: [
+      ...dynamicProducts.map((p: any) => ({ name: p.name, image: p.image, subcategory: p.subcategory })),
+      ...filteredBaseProducts,
+    ],
   };
 
   return (

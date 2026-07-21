@@ -1,0 +1,415 @@
+{
+  "siteSettings": {
+    "heroTitle": "Custom Corporate Gifting & Merchandise",
+    "heroSubtitle": "Pan-India corporate gifting solutions, welcome kits, branded apparel & promotional merchandise — crafted to perfection.",
+    "phone": "+91 76654 67878",
+    "whatsapp": "+91 76654 67878",
+    "email": "printdekhojpr@gmail.com",
+    "address": "Jaipur, Rajasthan, India",
+    "workingHours": "Mon–Sat: 10:00 AM – 7:00 PM",
+    "instagram": "https://instagram.com/printdekho",
+    "facebook": "https://facebook.com/printdekho",
+    "linkedin": "https://linkedin.com/company/printdekho",
+    "ctaTitle": "Ready to Transform Your Corporate Gifting?",
+    "ctaDescription": "Get a customized proposal, physical sample, and bulk pricing within 24 hours."
+  },
+  "statistics": [
+    { "value": 500, "suffix": "+", "label": "Happy Clients" },
+    { "value": 10000, "suffix": "+", "label": "Orders Delivered" },
+    { "value": 50, "suffix": "+", "label": "Product Categories" },
+    { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 0, "suffix": "", "label": "Pan India", "display": "Pan India" },
+    { "value": 12, "suffix": "+", "label": "Years Experience" }
+  ],
+  "categories": [
+    {
+      "id": "cat-1",
+      "name": "Corporate Gift Kits",
+      "slug": "corporate-gift-kits",
+      "description": "Curated branded kits for employees, clients, dealers & events.",
+      "image": "/images/slider_gifts.png",
+      "count": "120+ Products",
+      "span": "lg:col-span-2"
+    },
+    {
+      "id": "cat-2",
+      "name": "Employee Welcome Kits",
+      "slug": "welcome-kits",
+      "description": "Onboarding kits with branded essentials for new hires.",
+      "image": "/images/kit_after.png",
+      "count": "80+ Products",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-3",
+      "name": "Drinkware & Bottles",
+      "slug": "drinkware",
+      "description": "Premium steel bottles, coffee mugs & vacuum flasks.",
+      "image": "/images/slider_drinkware.png",
+      "count": "60+ Products",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-4",
+      "name": "Bags & Backpacks",
+      "slug": "bags",
+      "description": "Laptop bags, tote bags, duffle bags & travel backpacks.",
+      "image": "/images/new-bags-(2).jpeg",
+      "count": "45+ Products",
+      "span": "lg:col-span-2"
+    },
+    {
+      "id": "cat-5",
+      "name": "Corporate Apparel",
+      "slug": "apparel",
+      "description": "Polo tees, collar shirts, round necks & uniforms.",
+      "image": "/images/slider_apparel.png",
+      "count": "80+ Products",
+      "span": "lg:col-span-2"
+    },
+    {
+      "id": "cat-6",
+      "name": "Sports Jerseys",
+      "slug": "sports-jerseys",
+      "description": "Custom sublimated jerseys for corporate events & tournaments.",
+      "image": "/images/sports-jersey.jpg",
+      "count": "50+ Designs",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-7",
+      "name": "Stationery & Diaries",
+      "slug": "stationery",
+      "description": "Executive diaries, branded pens & desk accessories.",
+      "image": "/images/slider_gifts.png",
+      "count": "35+ Products",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-8",
+      "name": "Promotional T-Shirts",
+      "slug": "promotional",
+      "description": "Event t-shirts, campaign wear & marathon tees.",
+      "image": "/images/pt-1.jpeg",
+      "count": "40+ Designs",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-9",
+      "name": "Combo Sets",
+      "slug": "combo-sets",
+      "description": "Luxury gift sets with bottles, mugs, bags & more.",
+      "image": "/images/co-2.jpeg",
+      "count": "30+ Sets",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-10",
+      "name": "Festival Hampers",
+      "slug": "festival-hampers",
+      "description": "Seasonal & festival gifting hampers for Diwali, Christmas & New Year.",
+      "image": "/images/slider_branding.png",
+      "count": "25+ Hampers",
+      "span": "lg:col-span-1"
+    },
+    {
+      "id": "cat-11",
+      "name": "Branding Solutions",
+      "slug": "branding",
+      "description": "High-quality corporate branding solutions: logo printing, embroidery, sublimation, and laser engraving.",
+      "image": "/images/slider_branding.png",
+      "count": "15+ Services",
+      "span": "lg:col-span-1"
+    }
+  ],
+  "products": [
+    { "id": "prod-1", "name": "Executive Welcome Kit", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Executive Kits", "image": "/images/slider_gifts.png" },
+    { "id": "prod-2", "name": "Premium Swag Box", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Swag Boxes", "image": "/images/slider_welcome_kit.png" },
+    { "id": "prod-3", "name": "Classic Employee Kit (Plain)", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Welcome Kits", "image": "/images/kit_before.png" },
+    { "id": "prod-4", "name": "Custom Branded Welcome Kit", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Welcome Kits", "image": "/images/kit_after.png" },
+    { "id": "prod-5", "name": "Elite Corporate Gift Set", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Executive Kits", "image": "/images/slider_branding.png" },
+    { "id": "prod-6", "name": "Modern Onboarding Kit", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Onboarding Kits", "image": "/images/cp3.jpeg" },
+    { "id": "prod-7", "name": "Deluxe Office Combo Box", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Festival Hampers", "image": "/images/cp4.jpeg" },
+    { "id": "prod-8", "name": "Workspace Essentials Hamper", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Onboarding Kits", "image": "/images/cp5.jpeg" },
+    { "id": "prod-9", "name": "Smart Tech Onboarding Kit", "category": "Corporate Gift Kits", "categorySlug": "corporate-gift-kits", "subcategory": "Onboarding Kits", "image": "/images/cp6.jpeg" },
+    { "id": "prod-10", "name": "New Hire Welcome Kit", "category": "Employee Welcome Kits", "categorySlug": "welcome-kits", "subcategory": "Joining Kits", "image": "/images/slider_welcome_kit.png" },
+    { "id": "prod-11", "name": "Employee Onboarding Swag Set", "category": "Employee Welcome Kits", "categorySlug": "welcome-kits", "subcategory": "Swag Boxes", "image": "/images/kit_after.png" },
+    { "id": "prod-12", "name": "Executive Welcome Package", "category": "Employee Welcome Kits", "categorySlug": "welcome-kits", "subcategory": "Onboarding Hampers", "image": "/images/slider_gifts.png" },
+    { "id": "prod-13", "name": "Basic Joining Kit", "category": "Employee Welcome Kits", "categorySlug": "welcome-kits", "subcategory": "Joining Kits", "image": "/images/kit_before.png" },
+    { "id": "prod-14", "name": "Eco-Friendly Welcome Hamper", "category": "Employee Welcome Kits", "categorySlug": "welcome-kits", "subcategory": "Onboarding Hampers", "image": "/images/cp3.jpeg" },
+    { "id": "prod-15", "name": "Water-Resistant Laptop Backpack", "category": "Bags & Backpacks", "categorySlug": "bags", "subcategory": "Backpacks", "image": "/images/new-bags-(2).jpeg" },
+    { "id": "prod-16", "name": "Custom Printed Tote Bag", "category": "Bags & Backpacks", "categorySlug": "bags", "subcategory": "Tote Bags", "image": "/images/printed-bags.jpeg" },
+    { "id": "prod-17", "name": "Premium Travel Duffle Bag", "category": "Bags & Backpacks", "categorySlug": "bags", "subcategory": "Duffle Bags", "image": "/images/cp7.jpeg" },
+    { "id": "prod-18", "name": "Executive Slim Laptop Sleeve", "category": "Bags & Backpacks", "categorySlug": "bags", "subcategory": "Laptop Sleeves", "image": "/images/cp8.jpeg" },
+    { "id": "prod-19", "name": "Vacuum Insulated Stainless Steel Bottle", "category": "Drinkware & Bottles", "categorySlug": "drinkware", "subcategory": "Bottles", "image": "/images/slider_drinkware.png" },
+    { "id": "prod-20", "name": "Classic Ceramic Coffee Mug", "category": "Drinkware & Bottles", "categorySlug": "drinkware", "subcategory": "Mugs", "image": "/images/cup.jpeg" },
+    { "id": "prod-21", "name": "Designer Matte Finish Mug", "category": "Drinkware & Bottles", "categorySlug": "drinkware", "subcategory": "Mugs", "image": "/images/designer-mug.jpeg" },
+    { "id": "prod-22", "name": "Custom Branded Photo Mug", "category": "Drinkware & Bottles", "categorySlug": "drinkware", "subcategory": "Mugs", "image": "/images/printed-mug.webp" },
+    { "id": "prod-23", "name": "Premium Corporate Polo Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/slider_apparel.png" },
+    { "id": "prod-24", "name": "Classic Fit Polo Tee", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/polo-1.webp" },
+    { "id": "prod-25", "name": "Pique Cotton Polo", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/polo-2.webp" },
+    { "id": "prod-26", "name": "Modern Athleisure Polo", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/polo-3.webp" },
+    { "id": "prod-27", "name": "Contrast Collar Polo", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/polo-4.webp" },
+    { "id": "prod-28", "name": "Sporty Dry-Fit Polo", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Polo T-Shirts", "image": "/images/polo-5.webp" },
+    { "id": "prod-29", "name": "Executive Formal Collar Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Collar Shirts", "image": "/images/collar.jpeg" },
+    { "id": "prod-30", "name": "Oxford Cotton Office Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Collar Shirts", "image": "/images/collar-1.webp" },
+    { "id": "prod-31", "name": "Premium Cotton Business Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Collar Shirts", "image": "/images/collar-2.webp" },
+    { "id": "prod-32", "name": "Micro-Striped Collar Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Collar Shirts", "image": "/images/collar-3.webp" },
+    { "id": "prod-33", "name": "Casual Round Neck Tee", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Round Neck", "image": "/images/round.jpeg" },
+    { "id": "prod-34", "name": "Classic Round Neck Tee", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Round Neck", "image": "/images/round-2.jpeg" },
+    { "id": "prod-35", "name": "Soft Cotton Crewneck", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Round Neck", "image": "/images/rn1.webp" },
+    { "id": "prod-36", "name": "Comfy Round Neck Swag Tee", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Round Neck", "image": "/images/rn2.webp" },
+    { "id": "prod-37", "name": "Printed Promotional Round Neck", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Round Neck", "image": "/images/rn3.webp" },
+    { "id": "prod-38", "name": "Custom Tailored Casual Shirt", "category": "Corporate Apparel", "categorySlug": "apparel", "subcategory": "Collar Shirts", "image": "/images/t-shirt.jpeg" },
+    { "id": "prod-39", "name": "Sublimated Corporate Cricket Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Cricket Jerseys", "image": "/images/sports-jersey.jpg" },
+    { "id": "prod-40", "name": "Pro Team Soccer Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Soccer Jerseys", "image": "/images/jersey.jpeg" },
+    { "id": "prod-41", "name": "Custom Football Kit Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Soccer Jerseys", "image": "/images/jersey1.jpeg" },
+    { "id": "prod-42", "name": "Dry-Fit Athletic Jersey (Yellow/Green)", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Dry-Fit Athletic Tees", "image": "/images/j2.jpeg" },
+    { "id": "prod-43", "name": "Breathable Sports Tee (Red)", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Dry-Fit Athletic Tees", "image": "/images/j3.jpeg" },
+    { "id": "prod-44", "name": "Dynamic Team Jersey (Blue/Orange)", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Dry-Fit Athletic Tees", "image": "/images/j4.jpeg" },
+    { "id": "prod-45", "name": "Activewear Performance Jersey (Green)", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Dry-Fit Athletic Tees", "image": "/images/j5.jpeg" },
+    { "id": "prod-46", "name": "Corporate Marathon Runner Tee", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Marathon Runner Tees", "image": "/images/j6.jpeg" },
+    { "id": "prod-47", "name": "Sublimated Football Club Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Soccer Jerseys", "image": "/images/j7.jpeg" },
+    { "id": "prod-48", "name": "Elite Dry-Fit T-Shirt (Grey)", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Dry-Fit Athletic Tees", "image": "/images/j8.jpeg" },
+    { "id": "prod-49", "name": "Corporate Sports Tournament Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Cricket Jerseys", "image": "/images/j9.jpeg" },
+    { "id": "prod-50", "name": "Champion Series Team Jersey", "category": "Sports Jerseys", "categorySlug": "sports-jerseys", "subcategory": "Cricket Jerseys", "image": "/images/j10.jpeg" },
+    { "id": "prod-51", "name": "Executive Gift Set (Diary, Pen & Flask)", "category": "Stationery & Diaries", "categorySlug": "stationery", "subcategory": "Diaries", "image": "/images/slider_gifts.png" },
+    { "id": "prod-52", "name": "Classic Leatherette Bound Notebook", "category": "Stationery & Diaries", "categorySlug": "stationery", "subcategory": "Notebooks", "image": "/images/diary.jpeg" },
+    { "id": "prod-53", "name": "Metallic Premium Ballpoint Pen", "category": "Stationery & Diaries", "categorySlug": "stationery", "subcategory": "Pens", "image": "/images/cp9.jpeg" },
+    { "id": "prod-54", "name": "Sleek Metal Rollerball Pen Set", "category": "Stationery & Diaries", "categorySlug": "stationery", "subcategory": "Pens", "image": "/images/cp10.jpeg" },
+    { "id": "prod-55", "name": "Event Promotional Tee (White)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Event Tees", "image": "/images/pt-1.jpeg" },
+    { "id": "prod-56", "name": "Branded Campaign T-Shirt (Orange)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Campaign Wear", "image": "/images/pt-2.jpeg" },
+    { "id": "prod-57", "name": "Giveaway Round Neck Tee (Black)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Advertising Shirts", "image": "/images/pt-3.jpeg" },
+    { "id": "prod-58", "name": "Standard Promo T-Shirt (Blue)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Event Tees", "image": "/images/pt2.webp" },
+    { "id": "prod-59", "name": "Marathon Supporter Tee (Red)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Campaign Wear", "image": "/images/pt3.webp" },
+    { "id": "prod-60", "name": "Bulk Advertising Tee (Yellow)", "category": "Promotional T-Shirts", "categorySlug": "promotional", "subcategory": "Advertising Shirts", "image": "/images/pt4.webp" },
+    { "id": "prod-61", "name": "Premium Bottle & Mug Gift Combo", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Bottle & Mug Combos", "image": "/images/co-2.jpeg" },
+    { "id": "prod-62", "name": "Executive Diary, Pen & Keychain Set", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Executive Gift Sets", "image": "/images/co-3.jpeg" },
+    { "id": "prod-63", "name": "Metal Flask & Cup Gift Set", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Bottle & Mug Combos", "image": "/images/co-4.jpeg" },
+    { "id": "prod-64", "name": "Elite Wallet & Belt Gift Combo", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Luxury Hampers", "image": "/images/co-5.jpeg" },
+    { "id": "prod-65", "name": "Smart Workspace Combo (Unbranded)", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Executive Gift Sets", "image": "/images/kit_before.png" },
+    { "id": "prod-66", "name": "Custom Branded Office Swag Combo", "category": "Combo Sets", "categorySlug": "combo-sets", "subcategory": "Executive Gift Sets", "image": "/images/kit_after.png" },
+    { "id": "prod-67", "name": "Diwali Sweets & Dry Fruits Gourmet Box", "category": "Festival Hampers", "categorySlug": "festival-hampers", "subcategory": "Diwali Hampers", "image": "/images/slider_branding.png" },
+    { "id": "prod-68", "name": "Festive Celebration Gift Box", "category": "Festival Hampers", "categorySlug": "festival-hampers", "subcategory": "Holiday Boxes", "image": "/images/slider_gifts.png" },
+    { "id": "prod-69", "name": "New Year Premium Corporate Hamper", "category": "Festival Hampers", "categorySlug": "festival-hampers", "subcategory": "New Year Kits", "image": "/images/kit_after.png" },
+    { "id": "prod-70", "name": "Traditional Indian Sweet Hamper Set", "category": "Festival Hampers", "categorySlug": "festival-hampers", "subcategory": "Diwali Hampers", "image": "/images/co-2.jpeg" },
+    { "id": "prod-71", "name": "Premium Winter Holiday Gift Box", "category": "Festival Hampers", "categorySlug": "festival-hampers", "subcategory": "Holiday Boxes", "image": "/images/co-3.jpeg" },
+    { "id": "prod-72", "name": "Custom Screen Printing Service", "category": "Branding Solutions", "categorySlug": "branding", "subcategory": "Logo Printing", "image": "/images/slider_branding.png" },
+    { "id": "prod-73", "name": "Premium Raised Embroidery Service", "category": "Branding Solutions", "categorySlug": "branding", "subcategory": "Embroidery", "image": "/images/inhouse.png" },
+    { "id": "prod-74", "name": "Precision Laser Engraving Service", "category": "Branding Solutions", "categorySlug": "branding", "subcategory": "Laser Engraving", "image": "/images/slider_drinkware.png" },
+    { "id": "prod-75", "name": "High-Definition UV Printing Service", "category": "Branding Solutions", "categorySlug": "branding", "subcategory": "Logo Printing", "image": "/images/quality-assure.png" },
+    { "id": "prod-76", "name": "Full-Color Sublimation Branding Service", "category": "Branding Solutions", "categorySlug": "branding", "subcategory": "Sublimation", "image": "/images/kit_after.png" }
+  ],
+  "corporateKits": [
+    {
+      "id": "kit-1",
+      "title": "Employee Welcome Kit",
+      "image": "/images/slider_welcome_kit.png",
+      "items": ["Branded T-Shirt", "Steel Bottle", "Diary & Pen", "Laptop Bag", "Welcome Card"],
+      "moq": "50 units"
+    },
+    {
+      "id": "kit-2",
+      "title": "Joining Kit",
+      "image": "/images/kit_after.png",
+      "items": ["Polo T-Shirt", "ID Card Holder", "Notebook", "Coffee Mug", "Tote Bag"],
+      "moq": "50 units"
+    },
+    {
+      "id": "kit-3",
+      "title": "Executive Kit",
+      "image": "/images/slider_gifts.png",
+      "items": ["Premium Bottle", "Leather Diary", "Metal Pen Set", "Wireless Charger", "Gift Box"],
+      "moq": "25 units"
+    },
+    {
+      "id": "kit-4",
+      "title": "Dealer Kit",
+      "image": "/images/cp3.jpeg",
+      "items": ["Branded Bag", "Polo Shirt", "Steel Flask", "Certificate", "Premium Packaging"],
+      "moq": "100 units"
+    },
+    {
+      "id": "kit-5",
+      "title": "Festival Kit",
+      "image": "/images/slider_branding.png",
+      "items": ["Dry Fruits Box", "Branded Mug", "Scented Candle", "Greeting Card", "Festival Packaging"],
+      "moq": "50 units"
+    },
+    {
+      "id": "kit-6",
+      "title": "Work-From-Home Kit",
+      "image": "/images/cp5.jpeg",
+      "items": ["Laptop Stand", "Mouse Pad", "Coffee Mug", "Stationery Set", "Branded Box"],
+      "moq": "50 units"
+    }
+  ],
+  "portfolio": [
+    { "id": "port-1", "image": "/images/image-gallery-1.jpeg", "category": "Corporate Kits", "title": "Employee Welcome Kit" },
+    { "id": "port-2", "image": "/images/image-gallery-2.jpeg", "category": "Events", "title": "Annual Summit Merchandise" },
+    { "id": "port-3", "image": "/images/image-gallery-3.jpeg", "category": "Corporate Kits", "title": "Festival Gift Set" },
+    { "id": "port-4", "image": "/images/image-gallery-4.jpeg", "category": "Corporate Kits", "title": "Executive Appreciation Kit" },
+    { "id": "port-5", "image": "/images/image-gallery-5.jpeg", "category": "Events", "title": "Product Launch Event" },
+    { "id": "port-6", "image": "/images/image-gallery-6.jpeg", "category": "Corporate Kits", "title": "Dealer Conference Kit" },
+    { "id": "port-7", "image": "/images/slider_apparel.png", "category": "Apparel", "title": "Corporate Polo Collection" },
+    { "id": "port-8", "image": "/images/polo-3.webp", "category": "Apparel", "title": "Team Uniform Branding" },
+    { "id": "port-9", "image": "/images/collar-1.webp", "category": "Apparel", "title": "Executive Collar Shirts" },
+    { "id": "port-10", "image": "/images/sports-jersey.jpg", "category": "Events", "title": "Corporate Tournament Jerseys" },
+    { "id": "port-11", "image": "/images/slider_drinkware.png", "category": "Drinkware", "title": "Premium Steel Bottles" },
+    { "id": "port-12", "image": "/images/designer-mug.jpeg", "category": "Drinkware", "title": "Designer Coffee Mugs" },
+    { "id": "port-13", "image": "/images/cup.jpeg", "category": "Drinkware", "title": "Branded Tumblers" },
+    { "id": "port-14", "image": "/images/new-bags-(2).jpeg", "category": "Bags", "title": "Laptop Backpacks" },
+    { "id": "port-15", "image": "/images/printed-bags.jpeg", "category": "Bags", "title": "Tote Bags Collection" },
+    { "id": "port-16", "image": "/images/slider_welcome_kit.png", "category": "Corporate Kits", "title": "Premium Client Gift" },
+    { "id": "port-17", "image": "/images/slider_branding.png", "category": "Corporate Kits", "title": "Holiday Season Hamper" },
+    { "id": "port-18", "image": "/images/co-2.jpeg", "category": "Events", "title": "Award Ceremony Gifts" }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Priya Sharma",
+      "role": "HR Director",
+      "company": "TechVista Solutions",
+      "quote": "Print Dekho transformed our onboarding experience. The welcome kits are premium quality and our new hires absolutely love them. Their attention to detail is unmatched.",
+      "rating": 5
+    },
+    {
+      "id": "test-2",
+      "name": "Rahul Mehta",
+      "role": "Procurement Head",
+      "company": "Nexgen Hospitality",
+      "quote": "We've been working with Print Dekho for 3 years now. Their consistency in quality, timely delivery, and account management makes them our go-to gifting partner.",
+      "rating": 5
+    },
+    {
+      "id": "test-3",
+      "name": "Anjali Verma",
+      "role": "Marketing Manager",
+      "company": "GreenLeaf Industries",
+      "quote": "The branding on our corporate merchandise is impeccable. From design mockups to final delivery, the entire process was seamless and professional.",
+      "rating": 5
+    },
+    {
+      "id": "test-4",
+      "name": "Vikram Singh",
+      "role": "CEO",
+      "company": "StartupHub India",
+      "quote": "As a startup, we needed affordable yet premium gifting solutions. Print Dekho delivered beyond expectations with their flexible MOQ and competitive pricing.",
+      "rating": 5
+    }
+  ],
+  "faqs": {
+    "Ordering": [
+      { "id": "faq-1", "question": "What is the minimum order quantity (MOQ)?", "answer": "Our standard MOQ is 50 units for most products. For custom packaging and special items, the MOQ may start at 100 units. We're flexible — reach out for smaller pilot orders." },
+      { "id": "faq-2", "question": "How do I place a bulk order?", "answer": "You can place an order by filling out our Bulk Inquiry form, calling us at +91 76654 67878, or emailing printdekhojpr@gmail.com. Our team will share a quotation within 24 hours." },
+      { "id": "faq-3", "question": "Can I order samples before placing a bulk order?", "answer": "Yes! We provide physical samples for most products before bulk production. Sample charges are adjusted in your final invoice when you proceed with the bulk order." },
+      { "id": "faq-4", "question": "Do you deliver across India?", "answer": "Absolutely. We deliver pan-India through trusted logistics partners. Standard shipping takes 3–5 business days after production, depending on location." },
+      { "id": "faq-5", "question": "Can I track my order?", "answer": "Yes, once your order is dispatched, we share tracking details via WhatsApp and email. You can track the shipment in real-time." }
+    ],
+    "Customization": [
+      { "id": "faq-6", "question": "What branding options are available?", "answer": "We offer Screen Printing, Embroidery, Laser Engraving, UV Printing, Sublimation, Heat Transfer (DTF/Vinyl), and Debossing — depending on the product material and your design." },
+      { "id": "faq-7", "question": "Can you replicate my exact brand colors?", "answer": "Yes, we work with Pantone color matching to ensure your brand colors are replicated accurately across all products." },
+      { "id": "faq-8", "question": "Do you provide design/mockup support?", "answer": "Absolutely. Our design team creates free digital mockups for every order. You'll approve the mockup before we begin production." },
+      { "id": "faq-9", "question": "Can I customize packaging with my brand?", "answer": "Yes! We offer custom boxes, pouches, bags, and premium packaging options with your logo, colors, and messaging. Custom packaging is available from 100+ units." },
+      { "id": "faq-10", "question": "What file formats do you need for my logo?", "answer": "We accept AI, CDR, EPS, PDF (vector formats), and high-resolution PNG files (300+ DPI). Our design team can also help convert your logo if needed." }
+    ],
+    "Production": [
+      { "id": "faq-11", "question": "What is the standard production time?", "answer": "Standard production takes 7–10 working days after design approval. Rush orders can be completed in 4–5 working days (subject to product availability)." },
+      { "id": "faq-12", "question": "Is everything manufactured in-house?", "answer": "Yes, most products are manufactured and branded in our in-house facility in Jaipur. This gives us full control over quality, timelines, and costs." },
+      { "id": "faq-13", "question": "How do you ensure quality?", "answer": "We follow a multi-point quality check process — from raw material inspection to final QC before packaging. Every order is inspected by our dedicated QC team." },
+      { "id": "faq-14", "question": "Can you handle very large orders (10,000+ units)?", "answer": "Yes, our facility has a capacity of 50,000+ units per month. We regularly handle large-scale corporate orders with on-time delivery." },
+      { "id": "faq-15", "question": "What happens if there's a defect in my order?", "answer": "We have a strict quality guarantee. If any items are defective, we replace them at no extra cost. Report issues within 48 hours of delivery." }
+    ],
+    "Payment": [
+      { "id": "faq-16", "question": "What are your payment terms?", "answer": "We typically work on 50% advance + 50% before dispatch for new clients. For repeat clients, we offer flexible credit terms based on relationship." },
+      { "id": "faq-17", "question": "What payment methods do you accept?", "answer": "We accept Bank Transfer (NEFT/RTGS/IMPS), UPI, Credit/Debit cards, and company cheques. GST invoices are provided for all orders." },
+      { "id": "faq-18", "question": "Do you provide GST invoices?", "answer": "Yes, we provide proper GST tax invoices for every order. Our GST registration is active and verified." },
+      { "id": "faq-19", "question": "Is there any additional cost for branding?", "answer": "Branding charges depend on the technique and logo complexity. In most cases, branding is included in the per-unit price we quote. We'll always clarify this upfront." },
+      { "id": "faq-20", "question": "Do you offer volume discounts?", "answer": "Yes! We offer tiered pricing — the higher your quantity, the better the per-unit rate. Contact us for a custom quote based on your volume." }
+    ]
+  },
+  "blogs": [
+    {
+      "id": "blog-1",
+      "title": "Top 10 Corporate Gift Ideas for Employee Appreciation in 2024",
+      "excerpt": "Discover the most impactful corporate gift ideas that boost employee morale and strengthen team bonds. From premium kits to personalized merchandise.",
+      "image": "/images/slider_welcome_kit.png",
+      "category": "Corporate Gifting",
+      "date": "Dec 15, 2024",
+      "readTime": "5 min read",
+      "featured": true,
+      "content": "Employee appreciation is key to building a strong company culture. In 2024, corporate gifting has evolved beyond generic pens and mugs to personalized, high-utility welcome kits..."
+    },
+    {
+      "id": "blog-2",
+      "title": "How to Choose the Right Branding Technique for Your Products",
+      "excerpt": "Screen printing vs embroidery vs laser engraving — learn which branding technique works best for different corporate merchandise categories.",
+      "image": "/images/slider_gifts.png",
+      "category": "Branding Tips",
+      "date": "Dec 8, 2024",
+      "readTime": "4 min read",
+      "featured": false,
+      "content": "Selecting the right logo application method determines the longevity and aesthetic of your corporate merchandise..."
+    },
+    {
+      "id": "blog-3",
+      "title": "Why Custom Corporate Apparel Boosts Brand Visibility",
+      "excerpt": "Studies show branded apparel increases brand recall by 85%. Here's how to create a corporate wardrobe strategy that works.",
+      "image": "/images/slider_apparel.png",
+      "category": "Industry Trends",
+      "date": "Nov 28, 2024",
+      "readTime": "6 min read",
+      "featured": false,
+      "content": "When employees wear high-quality branded polo shirts or hoodies, they become walking ambassadors for your brand..."
+    },
+    {
+      "id": "blog-4",
+      "title": "The Complete Guide to Sports Jersey Customization",
+      "excerpt": "From fabric selection to sublimation design — everything you need to know about ordering custom team jerseys for corporate events.",
+      "image": "/images/jersey1.jpeg",
+      "category": "Product Guides",
+      "date": "Nov 20, 2024",
+      "readTime": "7 min read",
+      "featured": false,
+      "content": "Corporate sports tournaments and marathon events require breathable, high-performance sublimated t-shirts..."
+    },
+    {
+      "id": "blog-5",
+      "title": "Drinkware Trends: What's Hot in Corporate Gifting",
+      "excerpt": "Steel bottles, smart mugs, and eco-friendly tumblers — explore the latest drinkware trends for employee and client gifting.",
+      "image": "/images/slider_drinkware.png",
+      "category": "Corporate Gifting",
+      "date": "Nov 12, 2024",
+      "readTime": "4 min read",
+      "featured": false,
+      "content": "Stainless steel double-wall bottles keep drinks hot or cold for up to 24 hours, making them one of the most requested corporate gifts..."
+    },
+    {
+      "id": "blog-6",
+      "title": "Building a Diverse Corporate Gift Strategy for Pan-India Teams",
+      "excerpt": "How leading companies create inclusive gifting programs that resonate with employees across cultures, regions, and preferences.",
+      "image": "/images/slider_branding.png",
+      "category": "Industry Trends",
+      "date": "Nov 5, 2024",
+      "readTime": "5 min read",
+      "featured": false,
+      "content": "Managing a pan-India workforce means considering regional festivities, preferences, and multi-location logistics..."
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "inq-1",
+      "companyName": "Acme Corp",
+      "name": "Rajesh Kumar",
+      "phone": "+91 98765 43210",
+      "email": "rajesh@acme.com",
+      "category": "welcome-kits",
+      "quantity": "250",
+      "budget": "₹1,000 - ₹2,000 / kit",
+      "timeline": "2 weeks",
+      "message": "Looking for onboarding welcome kits for our Q3 hiring cohort. Please share quotation.",
+      "status": "Pending",
+      "createdAt": "2026-07-20T10:30:00.000Z"
+    }
+  ]
+}

@@ -39,12 +39,19 @@ const faqs: Record<string, { question: string; answer: string }[]> = {
   ],
 };
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export default function FAQsPage() {
+  const { data } = useSiteData();
+  const faqs: Record<string, { question: string; answer: string }[]> = data?.faqs || {};
+  const faqCategories = Object.keys(faqs).length > 0 ? Object.keys(faqs) : ["Ordering", "Customization", "Production", "Payment"];
+
   const [activeTab, setActiveTab] = useState("Ordering");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const currentFAQs = faqs[activeTab] || [];
+  const currentCategory = faqs[activeTab] ? activeTab : faqCategories[0];
+  const currentFAQs = faqs[currentCategory] || [];
   const filteredFAQs = searchQuery
     ? currentFAQs.filter(f => f.question.toLowerCase().includes(searchQuery.toLowerCase()) || f.answer.toLowerCase().includes(searchQuery.toLowerCase()))
     : currentFAQs;

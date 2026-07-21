@@ -30,12 +30,16 @@ const portfolioItems = [
   { image: "/images/co-2.jpeg", category: "Events", title: "Award Ceremony Gifts" },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export default function PortfolioPage() {
+  const { data } = useSiteData();
+  const portfolioItems = data?.portfolio || [];
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredItems = activeFilter === "All"
     ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeFilter);
+    : portfolioItems.filter((item: any) => item.category === activeFilter);
 
   return (
     <>
@@ -83,7 +87,7 @@ export default function PortfolioPage() {
 
           {/* Masonry Grid */}
           <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {filteredItems.map((item, i) => (
+            {filteredItems.map((item: any, i: number) => (
               <motion.div
                 key={`${item.title}-${i}`}
                 initial={{ opacity: 0, y: 16 }}

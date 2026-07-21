@@ -27,9 +27,42 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your inquiry! Our team will get back to you within 24 hours.");
+    setSubmitting(true);
+    setSuccessMsg("");
+
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccessMsg("Thank you for your inquiry! Our team will get back to you within 24 hours.");
+        setFormData({
+          companyName: "",
+          name: "",
+          phone: "",
+          email: "",
+          category: "",
+          quantity: "",
+          budget: "",
+          timeline: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to submit inquiry. Please try again or call us directly.");
+      }
+    } catch (err) {
+      alert("Error submitting inquiry. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -106,6 +139,11 @@ export default function ContactPage() {
               >
                 <h2 className="font-heading font-bold text-xl text-secondary mb-6">Send Us an Inquiry</h2>
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {successMsg && (
+                    <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold">
+                      {successMsg}
+                    </div>
+                  )}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-xs font-semibold text-secondary mb-2">Company Name *</label>

@@ -90,7 +90,11 @@ const categories = [
   },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export default function ProductsPage() {
+  const { data } = useSiteData();
+  const categories = data?.categories || [];
   return (
     <>
       {/* Hero — cream */}
@@ -124,7 +128,7 @@ export default function ProductsPage() {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {categories.map((cat, i) => (
+            {categories.map((cat: any, i: number) => (
               <motion.div
                 key={cat.slug}
                 initial={{ opacity: 0, y: 16 }}

@@ -27,7 +27,13 @@ const megaMenuCategories = [
   { name: "Branding", href: "/products/branding", icon: Palette, items: ["Logo Printing", "Embroidery", "Sublimation", "Engraving"] },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export function Header() {
+  const { data } = useSiteData();
+  const phone = data?.siteSettings?.phone || "+91 76654 67878";
+  const email = data?.siteSettings?.email || "printdekhojpr@gmail.com";
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
@@ -65,11 +71,11 @@ export function Header() {
       <div className="hidden lg:block bg-charcoal text-white/80 text-xs">
         <div className="container-main flex items-center justify-between py-2">
           <div className="flex items-center gap-6">
-            <a href="tel:+917665467878" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Phone size={12} /> +91 76654 67878
+            <a href={`tel:${phone.replace(/\s+/g, '')}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Phone size={12} /> {phone}
             </a>
-            <a href="mailto:printdekhojpr@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Mail size={12} /> printdekhojpr@gmail.com
+            <a href={`mailto:${email}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Mail size={12} /> {email}
             </a>
           </div>
           <div className="flex items-center gap-3">

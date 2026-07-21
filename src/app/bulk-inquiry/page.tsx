@@ -34,9 +34,42 @@ export default function BulkInquiryPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your bulk inquiry! Our team will share a quotation within 24 hours.");
+    setSubmitting(true);
+    setSuccessMsg("");
+
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccessMsg("Thank you for your bulk inquiry! Our team will share a quotation within 24 hours.");
+        setFormData({
+          companyName: "",
+          name: "",
+          phone: "",
+          email: "",
+          category: "",
+          quantity: "",
+          budget: "",
+          timeline: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to submit inquiry. Please try again or call us directly.");
+      }
+    } catch (err) {
+      alert("Error submitting inquiry. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -141,6 +174,11 @@ export default function BulkInquiryPage() {
             onSubmit={handleSubmit}
             className="space-y-5 bg-white p-8 lg:p-10 rounded-[22px] border border-border shadow-sm"
           >
+            {successMsg && (
+              <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold">
+                {successMsg}
+              </div>
+            )}
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-xs font-semibold text-secondary mb-2">Company Name *</label>

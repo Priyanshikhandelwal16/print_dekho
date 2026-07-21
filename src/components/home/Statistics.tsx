@@ -2,15 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-
-const stats = [
-  { value: 500, suffix: "+", label: "Happy Clients" },
-  { value: 10000, suffix: "+", label: "Orders Delivered" },
-  { value: 50, suffix: "+", label: "Product Categories" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 0, suffix: "", label: "Pan India", display: "Pan India" },
-  { value: 12, suffix: "+", label: "Years Experience" },
-];
+import { useSiteData } from "@/lib/useSiteData";
 
 function AnimatedCounter({ value, suffix, display }: { value: number; suffix: string; display?: string }) {
   const [count, setCount] = useState(0);
@@ -48,6 +40,9 @@ function AnimatedCounter({ value, suffix, display }: { value: number; suffix: st
 }
 
 export function Statistics() {
+  const { data } = useSiteData();
+  const stats = data?.statistics || [];
+
   return (
     <section className="section-spacing bg-charcoal relative overflow-hidden">
       {/* Subtle background pattern */}
@@ -60,9 +55,9 @@ export function Statistics() {
 
       <div className="container-main relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
-          {stats.map((stat, i) => (
+          {stats.map((stat: any, i: number) => (
             <motion.div
-              key={stat.label}
+              key={stat.label || i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -40,7 +40,13 @@ const quickLinks = [
   { name: "Terms of Service", href: "/terms" },
 ];
 
+import { useSiteData } from "@/lib/useSiteData";
+
 export function Footer() {
+  const { data } = useSiteData();
+  const phone = data?.siteSettings?.phone || "+91 76654 67878";
+  const email = data?.siteSettings?.email || "printdekhojpr@gmail.com";
+  const address = data?.siteSettings?.address || "Jaipur, Rajasthan, India";
   return (
     <footer className="bg-charcoal pt-20 pb-8">
       <div className="container-main">
@@ -61,14 +67,14 @@ export function Footer() {
             </p>
 
             <div className="mt-6 space-y-3">
-              <a href="tel:+917665467878" className="flex items-center gap-3 text-white/60 text-sm hover:text-accent transition-colors">
-                <Phone size={15} /> +91 76654 67878
+              <a href={`tel:${phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-white/60 text-sm hover:text-accent transition-colors">
+                <Phone size={15} /> {phone}
               </a>
-              <a href="mailto:printdekhojpr@gmail.com" className="flex items-center gap-3 text-white/60 text-sm hover:text-accent transition-colors">
-                <Mail size={15} /> printdekhojpr@gmail.com
+              <a href={`mailto:${email}`} className="flex items-center gap-3 text-white/60 text-sm hover:text-accent transition-colors">
+                <Mail size={15} /> {email}
               </a>
               <p className="flex items-start gap-3 text-white/60 text-sm">
-                <MapPin size={15} className="flex-shrink-0 mt-0.5" /> Jaipur, Rajasthan, India
+                <MapPin size={15} className="flex-shrink-0 mt-0.5" /> {address}
               </p>
             </div>
 
