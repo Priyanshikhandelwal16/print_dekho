@@ -18,6 +18,7 @@ import {
   ExternalLink,
   Loader2,
   CheckCircle2,
+  KeyRound,
 } from "lucide-react";
 
 import { LoginScreen } from "@/components/admin/LoginScreen";
@@ -31,6 +32,7 @@ import { BlogManager } from "@/components/admin/BlogManager";
 import { InquiriesManager } from "@/components/admin/InquiriesManager";
 import { SiteSettingsManager } from "@/components/admin/SiteSettingsManager";
 import { MediaManager } from "@/components/admin/MediaManager";
+import { ChangePasswordManager } from "@/components/admin/ChangePasswordManager";
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
@@ -141,6 +143,7 @@ export default function AdminPage() {
     { id: "inquiries", label: "Customer Inquiries", icon: Inbox, count: siteData.inquiries?.filter((i: any) => i.status === "Pending")?.length || 0 },
     { id: "settings", label: "Site Settings", icon: Settings },
     { id: "media", label: "Media Uploads", icon: Upload },
+    { id: "security", label: "Change Password", icon: KeyRound },
   ];
 
   return (
@@ -271,6 +274,8 @@ export default function AdminPage() {
           )}
 
           {activeTab === "media" && <MediaManager />}
+
+          {activeTab === "security" && <ChangePasswordManager />}
         </main>
       </div>
     </div>
