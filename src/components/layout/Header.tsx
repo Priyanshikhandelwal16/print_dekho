@@ -35,18 +35,11 @@ export function Header() {
   const phone = data?.siteSettings?.phone || "+91 76654 67878";
   const email = data?.siteSettings?.email || "printdekhojpr@gmail.com";
 
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
   const megaTimeout = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Lock body scroll when mobile menu open
   useEffect(() => {
@@ -92,11 +85,7 @@ export function Header() {
       </div>
 
       {/* ── Main Header ───────────────────────── */}
-      <header className={`sticky top-0 lg:top-[37px] z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-sm"
-          : "bg-white lg:bg-transparent"
-      }`}>
+      <header className="sticky top-0 lg:top-[37px] z-50 bg-white shadow-sm border-b border-border/40">
         <div className="container-main flex items-center justify-between h-[64px] lg:h-[80px]">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex-shrink-0">
