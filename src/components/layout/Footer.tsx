@@ -70,7 +70,7 @@ export function Footer() {
   const address = data?.siteSettings?.address || "Jaipur, Rajasthan, India";
 
   return (
-    <footer className="bg-charcoal pt-16 pb-8">
+    <footer className="bg-charcoal pt-16 pb-24 lg:pb-8">
       <div className="container-main">
 
         {/* ── TOP GRID: 4 columns on desktop ──────────────── */}
