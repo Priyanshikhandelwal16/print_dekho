@@ -218,7 +218,7 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-[70] w-[82vw] max-w-[340px] bg-white flex flex-col lg:hidden shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 z-[70] w-full bg-white flex flex-col lg:hidden shadow-2xl"
             >
               {/* Panel header */}
               <div className="flex items-center justify-between px-5 h-[64px] border-b border-border/60 flex-shrink-0">
