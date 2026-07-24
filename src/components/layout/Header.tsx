@@ -62,31 +62,33 @@ export function Header() {
 
   return (
     <>
-      {/* ── Top Bar (desktop only) ─────────────── */}
-      <div className="hidden lg:block bg-charcoal text-white/80 text-xs sticky top-0 z-50">
-        <div className="container-main flex items-center justify-between py-2">
-          <div className="flex items-center gap-6">
-            <a href={`tel:${phone.replace(/\s+/g, "")}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Phone size={12} /> {phone}
-            </a>
-            <a href={`mailto:${email}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Mail size={12} /> {email}
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link href="/contact" className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-white/10 border border-white/20 text-white/90 text-xs font-semibold hover:bg-white/20 transition-all">
-              <Send size={11} /> Send Inquiry
-            </Link>
-            <Link href="/catalog" className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-accent text-white text-xs font-semibold hover:bg-accent/90 transition-all">
-              <Download size={11} /> Download Catalogue
-            </Link>
+      {/* ── Fixed Header Wrapper ─────────────── */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        {/* Top Bar (desktop only) */}
+        <div className="hidden lg:block bg-charcoal text-white/80 text-xs">
+          <div className="container-main flex items-center justify-between py-2">
+            <div className="flex items-center gap-6">
+              <a href={`tel:${phone.replace(/\s+/g, "")}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
+                <Phone size={12} /> {phone}
+              </a>
+              <a href={`mailto:${email}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
+                <Mail size={12} /> {email}
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link href="/contact" className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-white/10 border border-white/20 text-white/90 text-xs font-semibold hover:bg-white/20 transition-all">
+                <Send size={11} /> Send Inquiry
+              </Link>
+              <Link href="/catalog" className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-accent text-white text-xs font-semibold hover:bg-accent/90 transition-all">
+                <Download size={11} /> Download Catalogue
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ── Main Header ───────────────────────── */}
-      <header className="sticky top-0 lg:top-[37px] z-50 bg-white shadow-sm border-b border-border/40">
-        <div className="container-main flex items-center justify-between h-[64px] lg:h-[80px]">
+        {/* Main Nav Bar */}
+        <header className="bg-white shadow-sm border-b border-border/40">
+          <div className="container-main flex items-center justify-between h-[64px] lg:h-[76px]">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex-shrink-0">
             <Image
@@ -188,9 +190,13 @@ export function Header() {
             <Menu size={26} />
           </button>
         </div>
-      </header>
+        </header>
+      </div>
 
-      {/* ── Mobile Menu — Full-screen overlay ─── */}
+      {/* Spacer to push content below fixed header */}
+      <div className="h-[64px] lg:h-[113px]" aria-hidden="true" />
+
+      {/* ── Mobile Menu ───────────────────────── */}
       <AnimatePresence>
         {mobileOpen && (
           <>
