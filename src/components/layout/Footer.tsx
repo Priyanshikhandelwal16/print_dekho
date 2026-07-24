@@ -200,7 +200,7 @@ export function Footer() {
         </div>
 
         {/* ── SOCIAL LINKS — full width row at bottom ───── */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Social icons */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -221,13 +221,24 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Copyright */}
-            <div className="text-center md:text-right">
+            {/* Copyright + Powered by */}
+            <div className="text-center md:text-right space-y-1.5">
               <p className="text-white/40 text-xs">
-                © 2025 Print Dekho. All rights reserved. Founded by Rohit Jain.
+                © {new Date().getFullYear()} Print Dekho. All rights reserved. Founded by Rohit Jain.
               </p>
-              <p className="text-white/25 text-xs mt-1">
+              <p className="text-white/25 text-xs">
                 Premium Corporate Gifting &amp; Branding Solutions — Jaipur, India
+              </p>
+              <p className="text-white/30 text-[11px]">
+                Powered by{" "}
+                <a
+                  href="https://jainup.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent/70 hover:text-accent font-semibold transition-colors"
+                >
+                  JAINUP | GROWTH SYSTEM
+                </a>
               </p>
             </div>
           </div>

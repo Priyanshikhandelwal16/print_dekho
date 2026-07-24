@@ -7,6 +7,7 @@ import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Loader } from "@/components/ui/Loader";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileBottomBar />
         <FloatingWhatsApp />
+        <ScrollToTop />
       </body>
     </html>
   );
