@@ -46,13 +46,30 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Fix: lock body scroll when mobile menu is open using position:fixed trick
   useEffect(() => {
     if (mobileOpen) {
-      document.body.style.overflow = "hidden";
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflowY = "scroll";
     } else {
-      document.body.style.overflow = "";
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+    };
   }, [mobileOpen]);
 
   const handleMegaEnter = () => {
@@ -63,6 +80,8 @@ export function Header() {
   const handleMegaLeave = () => {
     megaTimeout.current = setTimeout(() => setMegaOpen(false), 200);
   };
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <div className="sticky top-0 z-50">
@@ -113,7 +132,6 @@ export function Header() {
               width={200}
               height={65}
               style={{ width: "auto", height: "58px" }}
-              className="lg:h-[58px] h-[50px]"
               priority
               loading="eager"
             />
@@ -151,7 +169,6 @@ export function Header() {
                         onMouseLeave={handleMegaLeave}
                       >
                         <div className="grid grid-cols-4 gap-6">
-                          {/* Categories */}
                           <div className="col-span-3 grid grid-cols-3 gap-6">
                             {megaMenuCategories.map((cat) => (
                               <div key={cat.name}>
@@ -165,10 +182,7 @@ export function Header() {
                                 <ul className="space-y-1.5">
                                   {cat.items.map((item) => (
                                     <li key={item}>
-                                      <Link
-                                        href={cat.href}
-                                        className="text-xs text-muted hover:text-accent transition-colors"
-                                      >
+                                      <Link href={cat.href} className="text-xs text-muted hover:text-accent transition-colors">
                                         {item}
                                       </Link>
                                     </li>
@@ -177,15 +191,8 @@ export function Header() {
                               </div>
                             ))}
                           </div>
-
-                          {/* Promo Banner */}
                           <div className="col-span-1 relative overflow-hidden rounded-[16px]">
-                            <Image
-                              src="/images/slider_welcome_kit.png"
-                              alt="Corporate Gifting"
-                              fill
-                              className="object-cover"
-                            />
+                            <Image src="/images/slider_welcome_kit.png" alt="Corporate Gifting" fill className="object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent flex flex-col justify-end p-4">
                               <p className="text-white text-xs font-semibold">New Arrivals</p>
                               <p className="text-white/70 text-[10px] mt-1">Premium Corporate Kits 2025</p>
@@ -206,7 +213,7 @@ export function Header() {
                 </Link>
               )
             )}
-            {/* Contact Us — highlighted button */}
+            {/* Contact Us — highlighted */}
             <Link
               href="/contact"
               className="ml-1 px-4 py-2 text-sm font-semibold text-accent border border-accent/30 rounded-[10px] hover:bg-accent hover:text-white transition-all duration-200"
@@ -225,7 +232,7 @@ export function Header() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative z-10 p-2"
+            className="lg:hidden relative z-50 p-2"
             aria-label="Toggle menu"
             suppressHydrationWarning
           >
@@ -234,101 +241,121 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu — fixed overlay, no page scroll bleed */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto"
-            style={{ top: 0, paddingTop: "70px" }}
-          >
-            <nav className="container-main py-8 space-y-1">
-              {navLinks.map((link) =>
-                link.hasMega ? (
-                  <div key={link.name}>
-                    <button
-                      onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                      className="w-full flex items-center justify-between py-4 px-4 text-lg font-heading font-semibold text-secondary border-b border-border/50"
-                      suppressHydrationWarning
-                    >
-                      {link.name}
-                      <ChevronDown
-                        size={18}
-                        className={`transition-transform duration-300 ${mobileProductsOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    <AnimatePresence>
-                      {mobileProductsOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="pl-6 py-3 space-y-3">
-                            {megaMenuCategories.map((cat) => (
-                              <Link
-                                key={cat.name}
-                                href={cat.href}
-                                onClick={() => setMobileOpen(false)}
-                                className="flex items-center gap-3 py-2 text-sm text-muted hover:text-accent transition-colors"
-                              >
-                                <cat.icon size={16} className="text-accent" />
-                                {cat.name}
-                                <ChevronRight size={14} className="ml-auto" />
-                              </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-4 px-4 text-lg font-heading font-semibold text-secondary border-b border-border/50"
-                  >
-                    {link.name}
-                  </Link>
-                )
-              )}
-              {/* Contact Us in mobile menu */}
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="block py-4 px-4 text-lg font-heading font-semibold text-accent border-b border-border/50"
-              >
-                Contact Us
-              </Link>
-              <div className="pt-6 space-y-3">
-                <Button href="/bulk-inquiry" size="lg" className="w-full">
-                  Bulk Inquiry
-                </Button>
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-accent/30 text-accent text-sm font-semibold hover:bg-accent/5 transition-colors"
-                >
-                  <Send size={15} />
-                  Send Inquiry
-                </Link>
-                <Link
-                  href="/catalog"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-border text-muted text-sm font-semibold hover:bg-stone transition-colors"
-                >
-                  <Download size={15} />
-                  Download Catalogue
-                </Link>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+              onClick={closeMobile}
+            />
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 320, damping: 32 }}
+              className="fixed top-0 right-0 z-40 h-full w-[85vw] max-w-[360px] bg-white lg:hidden flex flex-col shadow-2xl"
+            >
+              {/* Header inside drawer */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-border/50 flex-shrink-0">
+                <Image src="/images/logo.png" alt="Print Dekho" width={130} height={42} style={{ width: "auto", height: "38px" }} />
+                <button onClick={closeMobile} className="p-2 text-muted hover:text-secondary" suppressHydrationWarning>
+                  <X size={22} />
+                </button>
               </div>
-            </nav>
-          </motion.div>
+
+              {/* Scrollable nav content */}
+              <div className="flex-1 overflow-y-auto">
+                <nav className="py-4">
+                  {navLinks.map((link) =>
+                    link.hasMega ? (
+                      <div key={link.name}>
+                        <button
+                          onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                          className="w-full flex items-center justify-between py-3.5 px-5 text-base font-heading font-semibold text-secondary border-b border-border/40 hover:bg-stone/50 transition-colors"
+                          suppressHydrationWarning
+                        >
+                          {link.name}
+                          <ChevronDown size={17} className={`transition-transform duration-300 ${mobileProductsOpen ? "rotate-180" : ""}`} />
+                        </button>
+                        <AnimatePresence>
+                          {mobileProductsOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                              className="overflow-hidden bg-stone/30"
+                            >
+                              <div className="pl-8 py-2 space-y-1">
+                                {megaMenuCategories.map((cat) => (
+                                  <Link
+                                    key={cat.name}
+                                    href={cat.href}
+                                    onClick={closeMobile}
+                                    className="flex items-center gap-3 py-2.5 text-sm text-muted hover:text-accent transition-colors"
+                                  >
+                                    <cat.icon size={15} className="text-accent flex-shrink-0" />
+                                    {cat.name}
+                                    <ChevronRight size={13} className="ml-auto opacity-40" />
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={closeMobile}
+                        className="flex items-center py-3.5 px-5 text-base font-heading font-semibold text-secondary border-b border-border/40 hover:bg-stone/50 hover:text-accent transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )
+                  )}
+                  <Link
+                    href="/contact"
+                    onClick={closeMobile}
+                    className="flex items-center py-3.5 px-5 text-base font-heading font-semibold text-accent border-b border-border/40 hover:bg-accent/5 transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </nav>
+
+                {/* CTA buttons inside drawer */}
+                <div className="px-5 py-6 space-y-3">
+                  <Button href="/bulk-inquiry" size="lg" className="w-full" onClick={closeMobile}>
+                    Bulk Inquiry
+                  </Button>
+                  <Link
+                    href="/contact"
+                    onClick={closeMobile}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-accent/30 text-accent text-sm font-semibold hover:bg-accent/5 transition-colors"
+                  >
+                    <Send size={15} />
+                    Send Inquiry
+                  </Link>
+                  <Link
+                    href="/catalog"
+                    onClick={closeMobile}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-border text-muted text-sm font-semibold hover:bg-stone transition-colors"
+                  >
+                    <Download size={15} />
+                    Download Catalogue
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>

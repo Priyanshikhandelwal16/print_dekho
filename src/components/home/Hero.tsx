@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Send, Download } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const slides = [
@@ -15,15 +14,9 @@ const slides = [
   { image: "/images/slider_branding.png", heading: "Complete Branding Solutions", subtitle: "End-to-end corporate branding since 2012" },
 ];
 
-
 export function Hero() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
-
-  const goTo = useCallback((index: number) => {
-    setDirection(index > current ? 1 : -1);
-    setCurrent(index);
-  }, [current]);
 
   const next = useCallback(() => {
     setDirection(1);
@@ -85,31 +78,16 @@ export function Hero() {
                   <p className="mt-4 text-white/70 text-base md:text-lg max-w-md mx-auto lg:ml-0">
                     {slides[current].subtitle}
                   </p>
-                  <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <div className="mt-8">
                     <Button href="/products" size="lg" className="!bg-accent !text-white hover:!bg-accent/90">
                       Explore Collection
                     </Button>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[16px] bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm font-semibold hover:bg-white/25 transition-all duration-300"
-                    >
-                      <Send size={16} />
-                      Send Inquiry
-                    </Link>
-                    <Link
-                      href="/catalog"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[16px] bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-semibold hover:bg-white/20 transition-all duration-300"
-                    >
-                      <Download size={16} />
-                      Download Catalogue
-                    </Link>
                   </div>
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
         </div>
-
 
         {/* Navigation Arrows */}
         <div className="absolute bottom-8 right-6 lg:bottom-12 lg:right-10 flex items-center gap-3">
