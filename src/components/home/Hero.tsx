@@ -15,12 +15,6 @@ const slides = [
   { image: "/images/slider_branding.png", heading: "Complete Branding Solutions", subtitle: "End-to-end corporate branding since 2012" },
 ];
 
-const stats = [
-  { value: "500+", label: "Clients" },
-  { value: "10K+", label: "Delivered" },
-  { value: "50+", label: "Categories" },
-  { value: "Pan India", label: "Delivery" },
-];
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
@@ -116,15 +110,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Floating Stats - Bottom Left */}
-        <div className="absolute bottom-8 left-6 lg:bottom-12 lg:left-10 hidden md:flex items-center gap-6 bg-white/10 backdrop-blur-md rounded-[16px] px-6 py-4 border border-white/20">
-          {stats.map((stat, i) => (
-            <div key={i} className="text-center">
-              <p className="font-heading font-extrabold text-white text-lg lg:text-xl">{stat.value}</p>
-              <p className="text-white/60 text-[10px] uppercase tracking-wider mt-0.5">{stat.label}</p>
-            </div>
-          ))}
-        </div>
 
         {/* Navigation Arrows */}
         <div className="absolute bottom-8 right-6 lg:bottom-12 lg:right-10 flex items-center gap-3">
