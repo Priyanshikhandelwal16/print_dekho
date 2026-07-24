@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Edit2, Trash2, X, BookOpen, Star, Upload, Loader2 } from "lucide-react";
+import { Plus, Edit2, Trash2, X, BookOpen, Star, Upload, Loader2, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 interface BlogManagerProps {
@@ -181,6 +181,18 @@ export function BlogManager({ data, onSave }: BlogManagerProps) {
                 <p className="text-xs text-muted mt-2 line-clamp-2 leading-relaxed">
                   {blog.excerpt}
                 </p>
+              </div>
+              {/* Preview link */}
+              <div className="mt-3 pt-3 border-t border-border/60">
+                <a
+                  href={`/blog/${blog.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold text-accent hover:text-accent/80 transition-colors"
+                >
+                  <ExternalLink size={11} />
+                  Preview on site
+                </a>
               </div>
             </div>
           </div>

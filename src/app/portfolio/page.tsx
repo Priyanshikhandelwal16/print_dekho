@@ -86,7 +86,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Masonry Grid */}
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
             {filteredItems.map((item: any, i: number) => (
               <motion.div
                 key={`${item.title}-${i}`}
@@ -96,19 +96,21 @@ export default function PortfolioPage() {
                 transition={{ delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative break-inside-avoid rounded-[22px] overflow-hidden border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
-                <div className={`relative ${i % 3 === 0 ? "h-80" : i % 3 === 1 ? "h-64" : "h-72"} overflow-hidden`}>
+                <div className={`relative overflow-hidden ${
+                  i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-[4/3]" : "aspect-square"
+                }`}>
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-charcoal/50 lg:bg-charcoal/0 lg:group-hover:bg-charcoal/60 transition-all duration-500 flex items-center justify-center">
-                    <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 text-center px-6">
-                      <p className="font-heading font-bold text-white text-sm md:text-base lg:text-lg">{item.title}</p>
-                      <p className="mt-2 text-white/70 text-xs md:text-sm">View Project</p>
+                    <div className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 text-center px-4">
+                      <p className="font-heading font-bold text-white text-sm md:text-base">{item.title}</p>
+                      <p className="mt-1 text-white/70 text-xs">View Project</p>
                     </div>
                   </div>
                 </div>

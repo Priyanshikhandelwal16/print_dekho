@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Mail, Menu, X, ChevronDown, ChevronRight, Gift, ShoppingBag, Coffee, Shirt, Watch, Palette } from "lucide-react";
+import { Phone, Mail, Menu, X, ChevronDown, ChevronRight, Gift, ShoppingBag, Coffee, Shirt, Watch, Palette, Send, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
@@ -15,7 +15,6 @@ const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const megaMenuCategories = [
@@ -42,7 +41,7 @@ export function Header() {
   const megaTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -66,9 +65,9 @@ export function Header() {
   };
 
   return (
-    <>
-      {/* Top Bar */}
-      <div className="hidden lg:block bg-charcoal text-white/80 text-xs">
+    <div className="sticky top-0 z-50">
+      {/* Top Bar — desktop only */}
+      <div className={`hidden lg:block text-xs transition-all duration-300 ${scrolled ? "bg-charcoal/95 backdrop-blur-md" : "bg-charcoal"} text-white/80`}>
         <div className="container-main flex items-center justify-between py-2">
           <div className="flex items-center gap-6">
             <a href={`tel:${phone.replace(/\s+/g, '')}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
@@ -79,21 +78,29 @@ export function Header() {
             </a>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" href="/contact" className="!text-white/80 !text-xs hover:!text-accent !decoration-white/30">
-              Send Enquiry
-            </Button>
-            <Button variant="secondary" size="sm" href="/catalog" className="!border-white/30 !text-white !text-xs hover:!bg-white hover:!text-charcoal">
-              Our Catalog
-            </Button>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-white/10 border border-white/20 text-white/90 text-xs font-semibold hover:bg-white/20 transition-all duration-200"
+            >
+              <Send size={11} />
+              Send Inquiry
+            </Link>
+            <Link
+              href="/catalog"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-[10px] bg-accent text-white text-xs font-semibold hover:bg-accent/90 transition-all duration-200"
+            >
+              <Download size={11} />
+              Download Catalogue
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-500 ${
+        className={`transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm"
+            ? "bg-white/97 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -103,9 +110,10 @@ export function Header() {
             <Image
               src="/images/logo.png"
               alt="Print Dekho"
-              width={160}
-              height={50}
-              style={{ width: "auto", height: "45px" }}
+              width={200}
+              height={65}
+              style={{ width: "auto", height: "58px" }}
+              className="lg:h-[58px] h-[50px]"
               priority
               loading="eager"
             />
@@ -198,6 +206,13 @@ export function Header() {
                 </Link>
               )
             )}
+            {/* Contact Us — highlighted button */}
+            <Link
+              href="/contact"
+              className="ml-1 px-4 py-2 text-sm font-semibold text-accent border border-accent/30 rounded-[10px] hover:bg-accent hover:text-white transition-all duration-200"
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -227,7 +242,8 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto pt-[70px]"
+            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto"
+            style={{ top: 0, paddingTop: "70px" }}
           >
             <nav className="container-main py-8 space-y-1">
               {navLinks.map((link) =>
@@ -282,20 +298,39 @@ export function Header() {
                   </Link>
                 )
               )}
-              <div className="pt-6">
+              {/* Contact Us in mobile menu */}
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="block py-4 px-4 text-lg font-heading font-semibold text-accent border-b border-border/50"
+              >
+                Contact Us
+              </Link>
+              <div className="pt-6 space-y-3">
                 <Button href="/bulk-inquiry" size="lg" className="w-full">
                   Bulk Inquiry
                 </Button>
-              </div>
-              <div className="pt-4 flex items-center gap-4 text-sm text-muted">
-                <a href="tel:+917665467878" className="flex items-center gap-1.5">
-                  <Phone size={14} /> +91 76654 67878
-                </a>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-accent/30 text-accent text-sm font-semibold hover:bg-accent/5 transition-colors"
+                >
+                  <Send size={15} />
+                  Send Inquiry
+                </Link>
+                <Link
+                  href="/catalog"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-[16px] border border-border text-muted text-sm font-semibold hover:bg-stone transition-colors"
+                >
+                  <Download size={15} />
+                  Download Catalogue
+                </Link>
               </div>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

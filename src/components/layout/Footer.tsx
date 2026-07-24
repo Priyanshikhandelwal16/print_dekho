@@ -57,9 +57,9 @@ export function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="Print Dekho"
-                width={150}
-                height={48}
-                style={{ width: "auto", height: "38px" }}
+                width={180}
+                height={58}
+                style={{ width: "auto", height: "52px" }}
               />
             </Link>
             <p className="mt-4 text-white/50 text-sm leading-relaxed max-w-sm">

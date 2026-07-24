@@ -3,68 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Clock } from "lucide-react";
 
 const categories = ["All", "Corporate Gifting", "Branding Tips", "Industry Trends", "Product Guides"];
-
-const blogs = [
-  {
-    title: "Top 10 Corporate Gift Ideas for Employee Appreciation in 2024",
-    excerpt: "Discover the most impactful corporate gift ideas that boost employee morale and strengthen team bonds. From premium kits to personalized merchandise.",
-    image: "/images/slider_welcome_kit.png",
-    category: "Corporate Gifting",
-    date: "Dec 15, 2024",
-    readTime: "5 min read",
-    featured: true,
-  },
-  {
-    title: "How to Choose the Right Branding Technique for Your Products",
-    excerpt: "Screen printing vs embroidery vs laser engraving — learn which branding technique works best for different corporate merchandise categories.",
-    image: "/images/slider_gifts.png",
-    category: "Branding Tips",
-    date: "Dec 8, 2024",
-    readTime: "4 min read",
-    featured: false,
-  },
-  {
-    title: "Why Custom Corporate Apparel Boosts Brand Visibility",
-    excerpt: "Studies show branded apparel increases brand recall by 85%. Here's how to create a corporate wardrobe strategy that works.",
-    image: "/images/slider_apparel.png",
-    category: "Industry Trends",
-    date: "Nov 28, 2024",
-    readTime: "6 min read",
-    featured: false,
-  },
-  {
-    title: "The Complete Guide to Sports Jersey Customization",
-    excerpt: "From fabric selection to sublimation design — everything you need to know about ordering custom team jerseys for corporate events.",
-    image: "/images/jersey1.jpeg",
-    category: "Product Guides",
-    date: "Nov 20, 2024",
-    readTime: "7 min read",
-    featured: false,
-  },
-  {
-    title: "Drinkware Trends: What's Hot in Corporate Gifting",
-    excerpt: "Steel bottles, smart mugs, and eco-friendly tumblers — explore the latest drinkware trends for employee and client gifting.",
-    image: "/images/slider_drinkware.png",
-    category: "Corporate Gifting",
-    date: "Nov 12, 2024",
-    readTime: "4 min read",
-    featured: false,
-  },
-  {
-    title: "Building a Diverse Corporate Gift Strategy for Pan-India Teams",
-    excerpt: "How leading companies create inclusive gifting programs that resonate with employees across cultures, regions, and preferences.",
-    image: "/images/slider_branding.png",
-    category: "Industry Trends",
-    date: "Nov 5, 2024",
-    readTime: "5 min read",
-    featured: false,
-  },
-];
 
 import { useSiteData } from "@/lib/useSiteData";
 
@@ -131,30 +75,40 @@ export default function BlogPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ease: [0.22, 1, 0.36, 1] }}
-              className="group grid lg:grid-cols-2 gap-8 bg-stone rounded-[22px] overflow-hidden border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 mb-12 cursor-pointer"
+              className="mb-12"
             >
-              <div className="relative h-64 lg:h-full min-h-[280px] overflow-hidden">
-                <Image
-                  src={featured.image}
-                  alt={featured.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="p-8 lg:p-10 flex flex-col justify-center">
-                <span className="inline-block w-fit px-3 py-1 bg-accent/10 rounded-full text-[10px] font-bold text-accent uppercase tracking-wider">
-                  {featured.category}
-                </span>
-                <h2 className="mt-4 font-heading font-bold text-xl lg:text-2xl text-secondary leading-tight group-hover:text-accent transition-colors">
-                  {featured.title}
-                </h2>
-                <p className="mt-3 text-sm text-muted leading-relaxed">{featured.excerpt}</p>
-                <div className="mt-5 flex items-center gap-4 text-xs text-muted">
-                  <span>{featured.date}</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {featured.readTime}</span>
+              <Link
+                href={`/blog/${featured.id}`}
+                className="group grid lg:grid-cols-2 gap-8 bg-stone rounded-[22px] overflow-hidden border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 cursor-pointer block"
+              >
+                <div className="relative aspect-[16/9] lg:aspect-auto lg:min-h-[320px] overflow-hidden">
+                  <Image
+                    src={featured.image}
+                    alt={featured.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
                 </div>
-              </div>
+                <div className="p-8 lg:p-10 flex flex-col justify-center">
+                  <span className="inline-block w-fit px-3 py-1 bg-accent/10 rounded-full text-[10px] font-bold text-accent uppercase tracking-wider">
+                    {featured.category}
+                  </span>
+                  <h2 className="mt-4 font-heading font-bold text-xl lg:text-2xl text-secondary leading-tight group-hover:text-accent transition-colors">
+                    {featured.title}
+                  </h2>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{featured.excerpt}</p>
+                  <div className="mt-5 flex items-center gap-4 text-xs text-muted">
+                    <span>{featured.date}</span>
+                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {featured.readTime}</span>
+                  </div>
+                  <div className="mt-5">
+                    <span className="inline-flex items-center gap-1.5 text-accent text-sm font-semibold group-hover:gap-3 transition-all duration-200">
+                      Read Article <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           )}
 
@@ -167,33 +121,50 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group bg-stone rounded-[22px] overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={blog.image}
-                    alt={blog.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-2.5 py-0.5 bg-accent/10 rounded-full text-[10px] font-bold text-accent uppercase tracking-wider">
-                    {blog.category}
-                  </span>
-                  <h3 className="mt-3 font-heading font-bold text-base text-secondary leading-snug group-hover:text-accent transition-colors line-clamp-2">
-                    {blog.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted line-clamp-2">{blog.excerpt}</p>
-                  <div className="mt-4 flex items-center gap-4 text-[11px] text-muted">
-                    <span>{blog.date}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {blog.readTime}</span>
+                <Link
+                  href={`/blog/${blog.id}`}
+                  className="group bg-stone rounded-[22px] overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 cursor-pointer block h-full"
+                >
+                  {/* Fixed aspect ratio for image — no more cutting */}
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
-                </div>
+                  <div className="p-6">
+                    <span className="inline-block px-2.5 py-0.5 bg-accent/10 rounded-full text-[10px] font-bold text-accent uppercase tracking-wider">
+                      {blog.category}
+                    </span>
+                    <h3 className="mt-3 font-heading font-bold text-base text-secondary leading-snug group-hover:text-accent transition-colors line-clamp-2">
+                      {blog.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted line-clamp-2">{blog.excerpt}</p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-4 text-[11px] text-muted">
+                        <span>{blog.date}</span>
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {blog.readTime}</span>
+                      </div>
+                      <span className="text-accent text-xs font-semibold flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                        Read <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
+
+          {blogs.length === 0 && (
+            <div className="text-center py-20 text-muted">
+              <p className="text-lg font-heading font-semibold">No blog posts yet.</p>
+              <p className="text-sm mt-2">Check back soon for insights and guides.</p>
+            </div>
+          )}
         </div>
       </section>
 

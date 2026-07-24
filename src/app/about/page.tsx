@@ -169,7 +169,7 @@ export default function AboutPage() {
           />
 
           <div className="relative mt-12">
-            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-border lg:-translate-x-px" />
+            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-[#7A9896] lg:-translate-x-px" />
             <div className="space-y-10 lg:space-y-14">
               {timeline.map((item, i) => (
                 <motion.div

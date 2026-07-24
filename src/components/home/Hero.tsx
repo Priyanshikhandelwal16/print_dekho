@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Send, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const slides = [
@@ -90,10 +91,24 @@ export function Hero() {
                   <p className="mt-4 text-white/70 text-base md:text-lg max-w-md mx-auto lg:ml-0">
                     {slides[current].subtitle}
                   </p>
-                  <div className="mt-8">
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                     <Button href="/products" size="lg" className="!bg-accent !text-white hover:!bg-accent/90">
                       Explore Collection
                     </Button>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[16px] bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm font-semibold hover:bg-white/25 transition-all duration-300"
+                    >
+                      <Send size={16} />
+                      Send Inquiry
+                    </Link>
+                    <Link
+                      href="/catalog"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[16px] bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-semibold hover:bg-white/20 transition-all duration-300"
+                    >
+                      <Download size={16} />
+                      Download Catalogue
+                    </Link>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -129,36 +144,6 @@ export function Hero() {
           >
             <ChevronRight size={18} />
           </button>
-        </div>
-
-        {/* Dot Pagination */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2 md:hidden">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === current ? "bg-accent w-6" : "bg-white/50"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-              suppressHydrationWarning
-            />
-          ))}
-        </div>
-
-        {/* Desktop Dot Pagination */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex items-center gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === current ? "bg-accent w-8" : "bg-white/40 hover:bg-white/60"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-              suppressHydrationWarning
-            />
-          ))}
         </div>
       </div>
 
